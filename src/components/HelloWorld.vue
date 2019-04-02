@@ -78,6 +78,7 @@
           >
             {{ eco.text }}
           </a>
+        <button v-on:click="meh">holi</button>
         </v-layout>
       </v-flex>
     </v-layout>
@@ -85,7 +86,20 @@
 </template>
 
 <script>
+  // import axios from 'axios'
+  import { selectAll } from '../api/api'
   export default {
+    created:function(){
+       this.meh()
+    },
+    methods:{
+      meh(){
+        selectAll('chofer')
+        .then(function(response){
+          console.log(response)
+        })
+      },
+    },
     data: () => ({
       ecosystem: [
         {
