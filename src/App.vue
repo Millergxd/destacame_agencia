@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <Header/>
-    <router-view></router-view>
+    <Header v-on:update="didUpdate"/>
+    <router-view ref="view"></router-view>
   </v-app>
 </template>
 
@@ -13,5 +13,10 @@ export default {
   components: {
     Header,
   },
+  methods:{
+    didUpdate(){
+      console.log(this.$refs)
+    }
+  }
 }
 </script>

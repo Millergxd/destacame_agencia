@@ -49,11 +49,11 @@ export const insert = async (endpoint, data) => {
   })
 }
 
-export const update = async (endpoint,id) => {
+export const update = async (endpoint,data) => {
   return axios({
     method:'put',
-    data: {...data_default},
-    url: `${VUE_APP_URL_BASE}${endpoint}/${id}`
+    data: {...data_default, ...data},
+    url: `${VUE_APP_URL_BASE}${endpoint}/${data.id}`
   })
   .then(response => {
     return response
